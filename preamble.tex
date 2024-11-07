@@ -1,0 +1,107 @@
+\documentclass{book}
+\usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,bmargin=2cm]{geometry}
+\usepackage{fancyhdr}       % page header and footer
+\usepackage{amsthm}         % theorem environments
+\usepackage{amsmath}        % math environments
+\usepackage{amssymb}        % \square 사용.
+\usepackage{mdframed}       % boxed frames
+\usepackage{xifthen}        % ifthenelse 조건문 사용
+
+% fancyhdr 설정
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{\textbf{\leftmark}}
+
+% Remove the existing proof environment from amsthm
+\let\proof\relax
+\let\endproof\relax
+
+ % amsthm의 기본 italic체가 아닌 기본 폰트를 사용하게 함.
+\theoremstyle{definition}
+
+\newmdtheoremenv[
+    innertopmargin=0em
+]{corollary}{Corollary}[chapter]
+
+\newmdtheoremenv[
+    innertopmargin=0em
+]{lemma}{Lemma}[chapter]
+
+\newmdtheoremenv[
+    innertopmargin=0em
+]{proposition}{Proposition}[chapter]
+
+\newtheorem*{remark}{Remark}
+
+% Define theorem enviromenet
+\newmdtheoremenv[
+    innertopmargin=0em,
+    skipabove=\baselineskip
+    ]{customtheorem}{Theorem}[chapter]
+
+\newenvironment{theorem}[1]{
+    \begin{customtheorem}
+    \textbf{\ifthenelse{\isempty{#1}}{}{(#1)}}%
+}{
+
+    \end{customtheorem}
+}
+
+% Define definition environment
+\newmdtheoremenv[
+    innertopmargin=0em,
+    skipabove=\baselineskip
+    ]{customdefinition}{Definition}[chapter]
+
+\newenvironment{definition}[1]{
+    \begin{customdefinition}
+    \textbf{\ifthenelse{\isempty{#1}}{}{(#1)}}%
+}{
+    \end{customdefinition}
+}
+
+% Define example enviromenet
+\newenvironment{example}[1][]
+{
+    \par\noindent\textbf{Example.} \ignorespaces
+}{
+    \hfill$\diamond$
+    \par
+}
+
+% Define proof environment
+\newmdenv[
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    rightline=false,
+    linecolor=black,
+    linewidth=1pt,
+    innertopmargin=0.5em,
+    innerbottommargin=0.5em,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]{proofbox}
+
+\newenvironment{proof}{
+    \begin{proofbox}
+    \textbf{Proof.}
+}{
+    \hfill $\square$
+    \end{proofbox}
+}
+
+\begin{document}
+
+\chapter{eafijeawf}
+dofjeofj
+ejifejf
+\chapter{efoekfa}
+qweporjqewr
+\newpage
+jeofjwae
+
+
+
+\end{document}
