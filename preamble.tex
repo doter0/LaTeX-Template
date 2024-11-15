@@ -72,6 +72,24 @@
     \par
 }
 
+% Property 환경 정의
+\newenvironment{property}
+{
+    \noindent\hrule\vspace{0.5em}\textbf{Property:}\par\vspace{0.5em}
+}
+{
+    \vspace{0.5em}\hrule\vspace{1em}
+}
+
+% Identity 환경 정의
+\newenvironment{identity}
+{
+    \noindent\hrule\vspace{0.5em}\textbf{Identity:}\par\vspace{0.5em}
+}
+{
+    \vspace{0.5em}\hrule\vspace{1em}
+}
+
 % Define proof environment
 \newmdenv[
     leftline=true,
@@ -79,7 +97,6 @@
     bottomline=false,
     rightline=false,
     linecolor=black,
-    linewidth=1pt,
     innertopmargin=0.5em,
     innerbottommargin=0.5em,
     skipabove=\baselineskip,
